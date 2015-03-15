@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds" debug="false">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%level]-[%thread]-%X{ip} %d{yyyy-MM-dd HH:mm:ss} %logger :%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./log/main/runtime-console-%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%level]-[%thread]-%X{ip} %d{yyyy-MM-dd HH:mm:ss} %logger :%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--警告控制台输出 -->
+    <appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./log/main/runtime-warn-%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%level]-[%thread]-%X{ip} %d{yyyy-MM-dd HH:mm:ss} %logger :%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--错误控制台输出 -->
+    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./log/main/runtime-error-%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%level]-[%thread]-%X{ip} %d{yyyy-MM-dd HH:mm:ss} %logger :%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--
+    <logger name="ch.qos.logback" level="INFO"/>
+    <logger name="org.hibernate" level="INFO"/>
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
+    -->
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="WARN"/>
+        <appender-ref ref="ERROR"/>
+    </root>
+
+</configuration>
