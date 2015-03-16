@@ -19,7 +19,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.lanmingle.demo.controller"})
+@ComponentScan(basePackages = {"com.lanmingle.demo.server", "com.lanmingle.demo.controller"})
 @PropertySource("classpath:/config/web-mvc-application-config.properties")
 public class WebMvcApplicationConfig extends WebMvcConfigurerAdapter {
 
@@ -145,6 +145,5 @@ public class WebMvcApplicationConfig extends WebMvcConfigurerAdapter {
     }
 
     //----------------------------------------------------------------------------------------------------------------------------------
-
 
 }

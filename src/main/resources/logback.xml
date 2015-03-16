@@ -53,7 +53,7 @@
     <logger name="org.apache" level="WARN"/>
     -->
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="WARN"/>

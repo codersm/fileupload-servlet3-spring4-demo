@@ -1,16 +1,9 @@
-package com.lanmingle.demo.config;
+#fileupload-servlet3-spring4-demo
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.filter.CharacterEncodingFilter;
-import org.springframework.web.filter.HiddenHttpMethodFilter;
-import org.springframework.web.multipart.support.MultipartFilter;
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+#例子:
+<a href="http://120.25.206.158:8888/fileupload-servlet3-spring4-demo/">http://120.25.206.158:8888/fileupload-servlet3-spring4-demo/</a>
 
-import javax.servlet.Filter;
-import javax.servlet.MultipartConfigElement;
-import javax.servlet.ServletRegistration;
-import javax.servlet.annotation.MultipartConfig;
+#核心代码:
 
 @MultipartConfig
 public class WebMvcDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
